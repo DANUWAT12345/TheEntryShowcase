@@ -6,6 +6,8 @@ import cookieParser from 'cookie-parser';
 
 import connectDB from './config/db.js';
 import authRoutes from './routes/auth.js';
+console.log('GOOGLE_CLIENT_ID:', process.env.GOOGLE_CLIENT_ID);
+console.log('REDIRECT_URI:', process.env.REDIRECT_URI);
 
 const app = express();
 app.use(cookieParser());

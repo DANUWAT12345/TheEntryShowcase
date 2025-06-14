@@ -1,0 +1,61 @@
+gitignore
+# Node.js
+node_modules/
+dist/
+build/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+.pnpm-debug.log*
+.pnpm-store/
+
+# Dependency lock files
+package-lock.json
+pnpm-lock.yaml
+yarn.lock
+
+# Environment variables
+.env
+.env.*
+!.env.development* # Keep development env files if needed
+!.env.staging* # Keep staging env files if needed
+
+# Compiled output
+lib/
+es/
+dist/
+tmp/
+out/
+.next/ # Next.js build output
+.nuxt/ # Nuxt.js build output
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE specific files
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+.settings/
+
+# Test coverage
+coverage/
+
+# Misc
+.nyc_output/
+.lock-wscript
+.eslintcache
+.prettiercache
+
+# Firebase Studio specific files
+.idx/
+
+# Certificates (if not managed securely otherwise)
+*.pem
+*.key
+*.cert

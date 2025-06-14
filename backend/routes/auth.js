@@ -7,6 +7,7 @@ const router = express.Router();
 
 router.get('/google', (req, res) => {
   const redirectUri = `https://accounts.google.com/o/oauth2/v2/auth?client_id=${process.env.GOOGLE_CLIENT_ID}&redirect_uri=${process.env.REDIRECT_URI}&response_type=code&scope=email profile`;
+  console.log(redirectUri)
   res.redirect(redirectUri);
 });
 
@@ -40,7 +41,7 @@ router.get('/google/callback', async (req, res) => {
     await redisClient.set(user._id.toString(), jwtToken, { EX: 3600 });
 
     res.cookie('token', jwtToken, { httpOnly: true, secure: true });
-    res.redirect('/dashboard');
+    res.redirect('/Home');
   } catch (err) {
     console.error(err);
     res.status(500).send('Login failed');
