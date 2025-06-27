@@ -59,6 +59,17 @@ class AuthService {
       throw new Error('Invalid Google token');
     }
   }
+
+  async getJwtFromRedis(userId) {
+    try {
+      const token = await redisClient.get(userId);
+      return token;
+    } catch (error) {
+      console.error('Error fetching JWT from Redis:', error);
+      return null;
+    }
+  }
+  
 }
 
 export default AuthService;
